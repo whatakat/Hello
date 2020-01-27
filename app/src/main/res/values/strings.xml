@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Hello</string>
     <string name="greeting">Hello Holland</string>
+    <string name="helloer">People</string>
+    <string name="morning">Good morning</string>
+    <string name="afternoon">Good afternoon</string>
+    <string name="evening">Good evening</string>
+    <string name="night">Good night</string>
 </resources>
