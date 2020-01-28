@@ -1,28 +1,28 @@
 package com.bankmtk.hello.model;
 
-import android.content.res.Resources;
-
-import com.bankmtk.hello.R;
 
 import java.util.Calendar;
 
 public class BuilderGreetingPhrase {
     private int currentHour;
-    private Resources resources;
-    public BuilderGreetingPhrase(Resources resources){
-        this.resources = resources;
-        currentHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+    private GreetingStrings greetingPhrases;
+    public BuilderGreetingPhrase(GreetingStrings greetingPhrases){
+        this(greetingPhrases, Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
+    }
+    public BuilderGreetingPhrase(GreetingStrings greetingPhrases, int hour){
+        currentHour = hour;
+        this.greetingPhrases = greetingPhrases;
     }
     public String get(){
-        String helloer = resources.getString(R.string.helloer);
+        String helloer = greetingPhrases.getHelloer();
         if (5<= currentHour && currentHour<12){
-            return String.format("%s %s!",resources.getString(R.string.morning),helloer);
+            return String.format("%s %s!",greetingPhrases.getMorning(),helloer);
         }else if (12<= currentHour && currentHour < 6 ){
-            return String.format("%s %s!",resources.getString(R.string.afternoon),helloer);
+            return String.format("%s %s!",greetingPhrases.getAfternoon(),helloer);
         }else if (6<=currentHour && currentHour <9){
-            return String.format("%s %s!",resources.getString(R.string.evening),helloer);
+            return String.format("%s %s!",greetingPhrases.getEvening(),helloer);
         }else{
-            return String.format("%s %s!",resources.getString(R.string.night),helloer);
+            return String.format("%s %s!",greetingPhrases.getNight(),helloer);
         }
 
     }
