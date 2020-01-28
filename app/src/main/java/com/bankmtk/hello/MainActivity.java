@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements GreetingStrings {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView greeting = (TextView)findViewById(R.id.greeting);
-        BuilderGreetingPhrase builderGreetingPhrase = new BuilderGreetingPhrase(getResources());
+        BuilderGreetingPhrase builderGreetingPhrase = new BuilderGreetingPhrase(this);
         greeting.setText(builderGreetingPhrase.get());
     }
 
